@@ -25,6 +25,7 @@
  */
 
 #include "ChunkHeader.h"
+#include "ChunkviewFunctions.c"
 
 int main(int argc, char **argv)
 {

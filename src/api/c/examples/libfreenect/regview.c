@@ -24,7 +24,8 @@
  * either License.
  */
 
-#include "regviewHeader"
+#include "regviewHeader.h"
+#include "regviewFunctions.h"
 
 int main(int argc, char **argv)
 {

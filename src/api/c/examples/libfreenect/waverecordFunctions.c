@@ -1,11 +1,4 @@
-#include "libfreenect.h"
-#include "libfreenect_audio.h"
-#include <stdio.h>
-#include <signal.h>
-
-static freenect_context* f_ctx;
-static freenect_device* f_dev;
-int die = 0;
+#include "waverecordHeader.h
 
 char wavheader[] = {
 	0x52, 0x49, 0x46, 0x46, // ChunkID = "RIFF"
@@ -29,4 +22,17 @@ typedef struct {
 void in_callback(freenect_device* dev, int num_samples,
                  int32_t* mic1, int32_t* mic2,
                  int32_t* mic3, int32_t* mic4,
-                 int16_t* cancelled, void *unknown);
+                 int16_t* cancelled, void *unknown) {
+	capture* c = (capture*)freenect_get_user(dev);
+	fwrite(mic1, 1, num_samples*sizeof(int32_t), c->logfiles[0]);
+	fwrite(mic2, 1, num_samples*sizeof(int32_t), c->logfiles[1]);
+	fwrite(mic3, 1, num_samples*sizeof(int32_t), c->logfiles[2]);
+	fwrite(mic4, 1, num_samples*sizeof(int32_t), c->logfiles[3]);
+	c->samples += num_samples;
+	printf("Sample received.  Total samples recorded: %d\n", c->samples);
+}
+
+void cleanup(int sig) {
+	printf("Caught SIGINT, cleaning up\n");
+	die = 1;
+}

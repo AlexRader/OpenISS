@@ -27,6 +27,7 @@
  */
 
 #include "tiltdemoHeader.h"
+#include "tiltdemoFunctions.c"
 
 int main(int argc, char *argv[])
 {

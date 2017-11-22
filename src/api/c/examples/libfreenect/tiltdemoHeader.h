@@ -21,11 +21,8 @@
   // The following function does not implement the return semantics, but
   // will do for now... A proper implementation would require Performance
   // Counters before and after the forward call to the Windows Sleep()...
-  unsigned sleep(unsigned seconds)
-  {
-    Sleep(seconds*1000);  // The Windows Sleep operates on milliseconds
-    return(0);
-  }
+  unsigned sleep(unsigned seconds);
+
   // Note for MinGW-gcc users: MinGW-gcc also does not provide the UNIX sleep()
   // function within <unistd.h>, but it does provide usleep(); trivial wrapping
   // of sleep() aroung usleep() is possible, however the usleep() documentation
@@ -53,8 +50,4 @@
    So, this should serve as the reference example for working with the motor,
    accelerometers, and LEDs.   */
 
-void no_kinect_quit(void)
-{
-	printf("Error: Kinect not connected?\n");
-	exit(1);
-}
+void no_kinect_quit(void);

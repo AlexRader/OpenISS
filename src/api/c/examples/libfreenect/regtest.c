@@ -25,6 +25,7 @@
  */
 
 #include "regtestHeader.h"
+#include "regtestFunctions.c"
 
 int main(void)
 {

@@ -26,7 +26,7 @@
  * either License.
  */
 
-#include "ClviewHeader.h"
+#include "GlviewHeader.h"
 
 int main(int argc, char **argv)
 {

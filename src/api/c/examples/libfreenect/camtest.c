@@ -26,9 +26,8 @@
  */
 
 #include "CamHeader.h"
-#include "depth_cb.h"
-#include "signalHandler.h"
-#include "video_cb.h"
+#include "CamtestFunctions.c"
+
 
 
 

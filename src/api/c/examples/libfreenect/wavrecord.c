@@ -25,6 +25,7 @@
  */
 
 #include "waverecordHeader.h"
+#include "waverecordFunctions.c"
 
 int main(int argc, char** argv) {
 	if (freenect_init(&f_ctx, NULL) < 0) {

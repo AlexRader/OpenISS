@@ -26,6 +26,7 @@
 
 
 #include "hiviewHeader.h"
+#include "hiviewFunctions.c"
 
 int main(int argc, char **argv)
 {
