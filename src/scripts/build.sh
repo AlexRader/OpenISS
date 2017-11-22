@@ -115,7 +115,7 @@ function install_libfreenect()
 
 function cleanup_libfreenect()
 {
-	if [ "$(grep "libfreenect_" build.cache)" == "openframeworks" ];
+	if [ "$(grep "libfreenect_" build.cache)" == "libfreenect_" ];
 	then
 		./dependencies/$system.sh --cleanup --freenect
         	#uninstall libfreenect
